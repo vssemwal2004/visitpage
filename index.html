@@ -100,9 +100,27 @@
           </ol>
         </div>
       </div>
+      <div class="hero__slot" id="apply">
+        <!-- EduLeap CRM Lead Capture Widget: MBSADM2026 -->
+        <div data-eduleap-widget="true"
+             data-widget-key="mbs2026"
+             data-tenant="graphic-era"
+             data-api-url="https://staff-crm.vsilabs.co/api/leads/ingest/widget"
+             data-campus="main-campus"
+             data-theme="light"
+             data-primary-color="#059669"
+             data-title="Enquire Now"
+             data-subtitle="Take the first step towards your future. Speak with an admissions advisor."
+             data-button-text="Submit Inquiry"
+             data-fields="lastname,interest,city,state,remarks"
+             data-scope-level="course"
+             data-institution-id="b23a2456-c5f8-4662-8196-0370fe396490"
+             data-department-id="3b6d3cfc-dbc0-492a-b771-4349eb2a9e46"
+             data-academic-level-id="902e2eca-1785-42d0-9f35-b9c9680cba23"
+             data-success-message="Thank you! Your information has been received. Our admissions team will be in touch shortly.">
+        </div>
+      </div>
     </div>
-    <!-- VISIT FORM SLOT: place the visit/enquiry form here. Every "Apply" link on the page points to #apply. -->
-    <div class="hero__slot" id="apply"></div>
     <svg class="ridge ridge--hero" aria-hidden="true"><use href="#ridge"/></svg>
   </section>
 
@@ -346,5 +364,6 @@
   <a class="dock__btn dock__btn--gold" href="#apply">Apply now<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
 </nav>
 <a class="tab-apply" href="#apply" aria-label="Apply now for 2027–28"><span>Apply 2027–28</span></a>
+<script src="https://staff-crm.vsilabs.co/widget/v1/eduleap-widget.js" async defer></script>
 </body>
 </html>

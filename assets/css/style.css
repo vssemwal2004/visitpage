@@ -9,7 +9,7 @@
    03 Buttons               10 Placements
    04 Header & menu         11 Campus
    05 Hero                  12 Admissions & scholarships
-   06 (form slot, #apply)   13 FAQ
+   06 Enquiry form (#apply) 13 FAQ
    07 Tapes, sections,      14 CTA, footer, dock
       About                 15 Motion · 16 Tablet · 17 Desktop · 18 Wide
    ===================================================================== */
@@ -110,8 +110,8 @@ ul,ol{margin:0;padding:0;list-style:none}
 .alt__label{font-size:13px;font-weight:600;color:var(--gold-2)}
 .alt__note{font-size:12px;color:rgba(255,255,255,.66)}
 
-/* Empty anchor where the visit form will be placed later (#apply) */
-.hero__slot{scroll-margin-top:100px}
+/* EduLeap enquiry form */
+.hero__slot{width:100%;max-width:460px;min-width:0;margin-inline:auto;padding:20px;border-radius:24px;background:#fff;color:var(--text);box-shadow:0 28px 70px -30px rgba(0,0,0,.55);scroll-margin-top:100px}
 
 /* ridge divider */
 .ridge{position:absolute;left:0;width:100%;height:56px;fill:#fff;pointer-events:none}
@@ -433,12 +433,13 @@ ul,ol{margin:0;padding:0;list-style:none}
   .hero__media img{object-position:50% 50%}
   .hero__veil{background:linear-gradient(100deg,rgba(10,27,63,.97) 0,rgba(10,27,63,.9) 34%,rgba(10,27,63,.45) 62%,rgba(10,27,63,.25) 100%),linear-gradient(0deg,rgba(10,27,63,.7),transparent 35%)}
   .hero__year{top:auto;bottom:-3vw;left:-1.5vw;right:auto;font-size:min(36vw,560px)}
-  .hero__grid{grid-template-columns:minmax(0,780px);align-content:center;padding-top:calc(var(--hdr) + 40px);min-height:calc(100vh - 70px)}
+  .hero__grid{grid-template-columns:minmax(0,1fr) minmax(320px,380px);gap:24px;align-items:center;align-content:center;padding-top:calc(var(--hdr) + 40px);min-height:calc(100vh - 70px)}
+  .hero__slot{justify-self:end}
   .hero__title{font-size:clamp(42px,4.6vw,72px);line-height:1.04}
   .hero__lede{font-size:17.5px}
   .alt{margin:40px 0 0;position:relative}
   .alt__ruler{display:block;height:14px;margin-bottom:12px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.4) 0 1px,transparent 1px 12px) bottom/100% 7px no-repeat,repeating-linear-gradient(90deg,rgba(245,183,0,.9) 0 2px,transparent 2px 60px) bottom/100% 14px no-repeat;border-bottom:1px solid rgba(255,255,255,.35)}
-  .alt__list{display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding:0;overflow:visible}
+  .alt__list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 0;padding:0;overflow:visible}
   .alt__mark{min-width:0;align-content:start;padding:2px 12px 0 14px;border:0;border-left:1px solid rgba(255,255,255,.22);border-radius:0;background:none;animation:rise .9s var(--ease) backwards;animation-delay:calc(var(--i) * .12s + .3s)}
   .alt__mark:first-child{border-left-color:var(--gold)}
   .alt__value{font-size:clamp(24px,2.3vw,34px);margin-bottom:4px}
@@ -549,6 +550,8 @@ ul,ol{margin:0;padding:0;list-style:none}
    18 Wide desktop – full navigation
    ===================================================================== */
 @media (min-width:1100px){
+  .hero__grid{grid-template-columns:minmax(0,1fr) minmax(340px,420px);gap:36px;align-items:center}
+  .alt__list{grid-template-columns:repeat(4,1fr);gap:0}
   .hdr__nav{display:flex;gap:2px}
   .hdr__nav a{padding:8px 13px;border-radius:999px;text-decoration:none;font-weight:600;font-size:14.5px;color:var(--ink);transition:background .2s}
   .hdr__nav a:hover{background:var(--sky)}

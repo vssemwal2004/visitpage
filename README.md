@@ -64,7 +64,8 @@ stores nothing.
 - **NIRF**: the page shows NIRF 2025 (#48 University, #52 Engineering, #52 Management).
   NIRF 2026 ranks could not be verified (nirfindia.org blocks automated access, and geu.ac.in
   labels "#48" as 2025 in one place and 2026 in another).
-- **Programme count**: the page lists 147 programmes in 21 departments (the programme tabs).
-  The geu.ac.in homepage counter now reads "135+ programs" and "25+ departments".
+- **Programme count**: the page says "140+ programmes" everywhere (client instruction); the
+  programme tabs list 147 in 21 departments. The geu.ac.in homepage counter reads "135+ programs"
+  and "25+ departments".
 - **Contact**: geu.ac.in lists toll-free 1800 890 6027 (also 1800 270 1280) and
   admissions@geu.ac.in; none is shown on this page yet.

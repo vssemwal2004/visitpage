@@ -115,12 +115,12 @@
   var TEXT = {
     'Enquire Now': 'Start your enquiry',
     'Take the first step towards your future. Speak with an admissions advisor.': 'An admissions counsellor will call you back.',
-    'Submit Inquiry': 'Request a call back',
+    'Submit Inquiry': 'Submit',
     'Inquiry Submitted!': 'Enquiry received'
   };
 
   /* facts already stated on this page */
-  var FACTS = ['NAAC A+', 'NIRF #48', '147 programmes'];
+  var FACTS = ['NAAC A+', 'NIRF #48', '140+ programmes'];
 
   /* placeholder per field: inputs by name, course selects by data-academic-field */
   var HINTS = {

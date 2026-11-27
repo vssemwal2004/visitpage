@@ -14,7 +14,7 @@
   <link rel="preload" href="assets/fonts/sora.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" imagesrcset="assets/img/hero/campus-aerial-dehradun-640.webp 640w, assets/img/hero/campus-aerial-dehradun-1024.webp 1024w, assets/img/hero/campus-aerial-dehradun-1600.webp 1600w, assets/img/hero/campus-aerial-dehradun-1920.webp 1920w" imagesizes="100vw" fetchpriority="high">
-  <link rel="stylesheet" href="assets/css/style.css?v=9">
+  <link rel="stylesheet" href="assets/css/style.css?v=11">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollegeOrUniversity","name":"Graphic Era (Deemed to be University)","url":"https://geu.ac.in","address":{"@type":"PostalAddress","streetAddress":"566/6, Bell Road, Society Area, Clement Town","addressLocality":"Dehradun","addressRegion":"Uttarakhand","postalCode":"248002","addressCountry":"IN"}}</script>
 </head>
 <body>
@@ -101,14 +101,11 @@
       <!-- NoPaperForms admissions enquiry widget -->
       <div class="hero__slot" id="apply" aria-label="Admissions enquiry form">
         <div class="hero__form-head">
-          <span class="hero__form-badge">Admissions 2027–28</span>
-          <h2 class="hero__form-title">Start your enquiry</h2>
+          <h2 class="hero__form-title">Start your enquiry <span class="hero__form-badge">2027–28</span></h2>
           <p class="hero__form-subtitle">An admissions counsellor will call you back.</p>
-          <ul class="hero__form-facts" aria-label="Graphic Era facts">
-            <li>NAAC A+</li><li>NIRF #48</li><li>140+ programmes</li>
-          </ul>
         </div>
-        <div class="npf_wgts" data-height="500px" data-w="92ea1d626be649723be7a933c066ddf8"></div>
+        <!-- Form height is controlled by --form-h in style.css (keep data-height equal to it) -->
+        <div class="npf_wgts" data-height="610px" data-w="92ea1d626be649723be7a933c066ddf8"></div>
       </div>
     </div>
     <svg class="ridge ridge--hero" aria-hidden="true"><use href="#ridge"/></svg>
@@ -363,6 +360,11 @@
 </nav>
 <a class="tab-apply" href="#apply" aria-label="Apply now for 2027–28"><span>Apply 2027–28</span></a>
 <script>
+  // NoPaperForms only serves whitelisted domains; locally it shows "403".
+  // On file:// / localhost / LAN IPs, show a same-size skeleton instead so the layout can be checked.
+  if (/^(localhost|127\.|192\.168\.|10\.|$)/.test(location.hostname)) {
+    document.querySelector('.npf_wgts').classList.add('is-preview');
+  }
   var s = document.createElement('script');
   s.type = 'text/javascript';
   s.async = true;

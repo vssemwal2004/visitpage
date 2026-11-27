@@ -111,19 +111,23 @@ ul,ol{margin:0;padding:0;list-style:none}
 .alt__note{font-size:12px;color:rgba(255,255,255,.66)}
 
 /* NoPaperForms enquiry widget card */
-.hero__slot{scroll-margin-top:100px;position:relative;z-index:1;width:min(100% - 10px,460px);margin:28px auto 42px;border-radius:24px;overflow:hidden;color:var(--text);
+/* --form-h = the widget's natural content height. Set it once (and keep data-height in index.html equal):
+   if the live form shows its own scrollbar, raise it; if there is empty space under Submit, lower it. */
+.hero__slot{--form-h:610px;--card-h:calc(var(--form-h) + 72px);scroll-margin-top:100px;position:relative;z-index:1;width:min(100%,440px);margin:24px auto 36px;border-radius:20px;overflow:hidden;color:var(--text);
   background:#fff;
-  box-shadow:10px 10px 0 rgba(245,183,0,.92),0 40px 80px -30px rgba(0,0,0,.75)}
-.hero__form-head{position:relative;padding:18px 20px 30px;color:#fff;overflow:hidden;
+  box-shadow:0 30px 70px -28px rgba(0,0,0,.7)}
+.hero__form-head{position:relative;padding:12px 18px 20px;color:#fff;overflow:hidden;
   background:repeating-radial-gradient(circle at 108% -12%,transparent 0 13px,rgba(245,183,0,.17) 13px 14px),radial-gradient(90% 130% at 0% 0%,rgba(59,107,255,.42),transparent 62%),linear-gradient(135deg,#123274 0%,#0A1B3F 100%)}
-.hero__form-head::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:16px;background:#fff;clip-path:polygon(0 100%,0 62%,5% 34%,10% 58%,17% 12%,25% 52%,32% 28%,40% 64%,48% 16%,56% 56%,63% 30%,71% 66%,79% 22%,87% 58%,93% 36%,100% 62%,100% 100%)}
-.hero__form-badge{display:inline-block;margin-bottom:8px;padding:3px 10px;border-radius:999px;background:rgba(245,183,0,.16);border:1px solid rgba(245,183,0,.4);font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#FFD34D}
-.hero__form-title{margin:0 0 2px;font-family:var(--display);font-size:22px;line-height:1.2;font-weight:700;letter-spacing:-.02em;color:#fff}
-.hero__form-subtitle{margin:0;font-size:13px;line-height:1.45;color:rgba(255,255,255,.74)}
-.hero__form-facts{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0;padding:0;list-style:none}
-.hero__form-facts li{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);font-size:11.5px;font-weight:600;line-height:1.5;color:rgba(255,255,255,.9)}
-.hero__form-facts li::before{content:"";width:6px;height:6px;border-radius:50%;background:#F5B700}
-@media (max-width:540px){.hero__form-head{padding:16px 16px 28px}.hero__form-title{font-size:20px}}
+.hero__form-head::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:10px;background:#fff;clip-path:polygon(0 100%,0 62%,5% 34%,10% 58%,17% 12%,25% 52%,32% 28%,40% 64%,48% 16%,56% 56%,63% 30%,71% 66%,79% 22%,87% 58%,93% 36%,100% 62%,100% 100%)}
+.hero__form-title{display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px;margin:0;font-family:var(--display);font-size:19px;line-height:1.25;font-weight:700;letter-spacing:-.02em;color:#fff}
+.hero__form-badge{padding:2px 9px;border-radius:999px;background:rgba(245,183,0,.16);border:1px solid rgba(245,183,0,.4);font-family:var(--body,inherit);font-size:10.5px;font-weight:700;letter-spacing:.1em;line-height:1.5;color:#FFD34D}
+.hero__form-subtitle{margin:2px 0 0;font-size:12.5px;line-height:1.4;color:rgba(255,255,255,.74)}
+
+/* The widget: card height = header + exactly --form-h, so nothing clips and nothing scrolls twice */
+.npf_wgts{position:relative;min-height:var(--form-h);background:#fff}
+.npf_wgts iframe{display:block;width:100%!important;height:var(--form-h)!important;max-width:100%;border:0}
+/* Local (not whitelisted): hide NoPaperForms' "403" page; the card stays plain white at the real size */
+.npf_wgts.is-preview iframe{visibility:hidden}
 
 /* ridge divider */
 .ridge{position:absolute;left:0;width:100%;height:56px;fill:#fff;pointer-events:none}
@@ -449,17 +453,35 @@ ul,ol{margin:0;padding:0;list-style:none}
   .hero__media img{object-position:50% 50%}
   .hero__veil{background:linear-gradient(100deg,rgba(10,27,63,.97) 0,rgba(10,27,63,.9) 34%,rgba(10,27,63,.45) 62%,rgba(10,27,63,.25) 100%),linear-gradient(0deg,rgba(10,27,63,.7),transparent 35%)}
   .hero__year{top:auto;bottom:-3vw;left:-1.5vw;right:auto;font-size:min(36vw,560px)}
-  .hero__grid{grid-template-columns:minmax(0,1fr) minmax(340px,440px);align-items:center;gap:clamp(24px,4vw,64px);padding-top:calc(var(--hdr) + 40px);min-height:calc(100vh - 70px)}
-  .hero__slot{width:calc(100% - 14px);margin:0 14px 0 auto;box-shadow:14px 14px 0 rgba(245,183,0,.92),0 40px 80px -30px rgba(0,0,0,.75)}
-  .hero__title{font-size:clamp(42px,4.6vw,72px);line-height:1.04}
-  .hero__lede{font-size:17.5px}
-  .alt{margin:40px 0 0;position:relative}
+  .hero__grid{--pt:calc(var(--hdr) + 36px);grid-template-columns:minmax(0,1fr) minmax(340px,420px);align-items:center;gap:clamp(24px,4vw,64px);padding-top:var(--pt);min-height:calc(100svh - 70px)}
+  /* The extra height grows upward: shift the centred card up by half the added 110px, only when there is free space above it */
+  .hero__slot{width:100%;margin:0 0 0 auto;top:calc(-1 * clamp(0px, (100svh - 70px - var(--pt) - var(--card-h)) / 2, 55px))}
+  .hero__title{font-size:clamp(38px,3.9vw,60px);line-height:1.05}
+  .hero__lede{font-size:17px}
+  .alt{margin:34px 0 0;position:relative}
   .alt__ruler{display:block;height:14px;margin-bottom:12px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.4) 0 1px,transparent 1px 12px) bottom/100% 7px no-repeat,repeating-linear-gradient(90deg,rgba(245,183,0,.9) 0 2px,transparent 2px 60px) bottom/100% 14px no-repeat;border-bottom:1px solid rgba(255,255,255,.35)}
   .alt__list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 0;padding:0;overflow:visible}
   .alt__mark{min-width:0;align-content:start;padding:2px 12px 0 14px;border:0;border-left:1px solid rgba(255,255,255,.22);border-radius:0;background:none;animation:rise .9s var(--ease) backwards;animation-delay:calc(var(--i) * .12s + .3s)}
   .alt__mark:first-child{border-left-color:var(--gold)}
   .alt__value{font-size:clamp(24px,2.3vw,34px);margin-bottom:4px}
   @keyframes rise{from{opacity:0;transform:translateY(16px)}}
+
+  /* Short laptop screens (1366x768, 1280x720…): keep heading + full form card inside the first screen */
+  @media (max-height:820px){
+    .hero__grid{--pt:calc(var(--hdr) + 26px)}
+    .pill{padding:5px 12px 5px 9px;font-size:12px}
+    .hero__title{margin-top:10px;font-size:clamp(34px,3.3vw,50px)}
+    .hero__lede{margin-top:10px;font-size:16px}
+    .hero__ctas{margin-top:18px}
+    .hero__ctas .btn{--h:48px}
+    .alt{margin-top:22px}
+    .alt__ruler{margin-bottom:8px}
+    .alt__value{font-size:clamp(22px,2vw,28px)}
+  }
+  @media (max-height:700px){
+    .hero__form-subtitle,.alt__note{display:none}
+    .hero__form-head{padding-bottom:18px}
+  }
 
   .ridge{height:90px}
 

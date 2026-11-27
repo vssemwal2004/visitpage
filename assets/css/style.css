@@ -94,19 +94,19 @@ ul,ol{margin:0;padding:0;list-style:none}
 .pill{display:inline-flex;align-items:center;gap:10px;max-width:100%;padding:7px 14px 7px 10px;border-radius:999px;background:rgba(10,27,63,.45);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-size:12.5px;font-weight:600;line-height:1.35}
 .pill__dot{flex:none;width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 0 rgba(245,183,0,.7);animation:pulse 2s infinite}
 @keyframes pulse{70%{box-shadow:0 0 0 10px rgba(245,183,0,0)}100%{box-shadow:0 0 0 0 rgba(245,183,0,0)}}
-.hero__title{margin-top:14px;font-family:var(--display);font-weight:700;font-size:clamp(38px,11vw,88px);line-height:1.04;letter-spacing:-.025em;text-wrap:balance}
+.hero__title{margin-top:14px;font-family:var(--display);font-weight:700;font-size:clamp(36px,10.5vw,64px);line-height:1.04;letter-spacing:-.025em;text-wrap:balance}
 .hl{color:var(--gold);background:linear-gradient(transparent 72%,rgba(245,183,0,.28) 72% 92%,transparent 92%);padding-right:.04em}
 .hero__lede{margin-top:14px;max-width:560px;color:rgba(255,255,255,.84);font-size:16px}
 .hero__ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 .hero__ctas .btn{flex:1 1 200px}
 
 /* Stats: a ruler with markers on desktop, swipeable chips on mobile */
-.alt{margin-top:26px;margin-inline:calc(var(--gutter)*-1)}
+.alt{margin-top:26px}
 .alt__ruler{display:none}
-.alt__list{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px var(--gutter) 6px;scrollbar-width:none}
-.alt__list::-webkit-scrollbar{display:none}
-.alt__mark{scroll-snap-align:start;flex:0 0 auto;min-width:148px;padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);display:grid;gap:2px}
-.alt__value{font-family:var(--display);font-size:28px;font-weight:700;letter-spacing:-.02em;line-height:1;color:#fff;white-space:nowrap}
+/* phones: 2 x 2 grid, every fact visible without sideways scrolling */
+.alt__list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0;padding:0;list-style:none}
+.alt__mark{min-width:0;padding:14px;border-radius:16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);display:grid;align-content:start;gap:2px}
+.alt__value{font-family:var(--display);font-size:clamp(22px,6.4vw,28px);font-weight:700;letter-spacing:-.02em;line-height:1;color:#fff;white-space:nowrap}
 .alt__label{font-size:13px;font-weight:600;color:var(--gold-2)}
 .alt__note{font-size:12px;color:rgba(255,255,255,.66)}
 
@@ -393,6 +393,9 @@ ul,ol{margin:0;padding:0;list-style:none}
 /* =====================================================================
    16 Tablet / large phone
    ===================================================================== */
+@media (min-width:700px) and (max-width:860px){
+  .alt__list{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
 @media (min-width:560px){
   .hero__ctas .btn{flex:0 0 auto}
   .ranks{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:560px}

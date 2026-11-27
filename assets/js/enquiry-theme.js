@@ -105,6 +105,10 @@
     '  .el-select{padding-right:30px;background-position:right 10px center}',
     '  .el-textarea{height:auto;padding:10px 12px;line-height:1.4}',
     '}',
+    /* narrow phones: email and mobile get a full row so the placeholder is not cut off */
+    '@media (max-width:400px){',
+    '  .el-field-half:has([name="email"]),.el-field-half:has([name="phoneNumber"]){grid-column:span 2}',
+    '}',
     '@media (max-width:359px){',
     '  .el-form-grid,.el-cascade-grid{grid-template-columns:minmax(0,1fr)}',
     '  .el-field-half,.el-field-full{grid-column:span 1}',

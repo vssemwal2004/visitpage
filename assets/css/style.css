@@ -114,6 +114,16 @@ ul,ol{margin:0;padding:0;list-style:none}
 .hero__slot{scroll-margin-top:100px;position:relative;z-index:1;width:min(100% - 10px,460px);min-height:800px;margin:28px auto 42px;border-radius:24px;overflow:hidden;color:var(--text);
   background:#fff;
   box-shadow:10px 10px 0 rgba(245,183,0,.92),0 40px 80px -30px rgba(0,0,0,.75)}
+.hero__form-head{position:relative;padding:18px 20px 30px;color:#fff;overflow:hidden;
+  background:repeating-radial-gradient(circle at 108% -12%,transparent 0 13px,rgba(245,183,0,.17) 13px 14px),radial-gradient(90% 130% at 0% 0%,rgba(59,107,255,.42),transparent 62%),linear-gradient(135deg,#123274 0%,#0A1B3F 100%)}
+.hero__form-head::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:16px;background:#fff;clip-path:polygon(0 100%,0 62%,5% 34%,10% 58%,17% 12%,25% 52%,32% 28%,40% 64%,48% 16%,56% 56%,63% 30%,71% 66%,79% 22%,87% 58%,93% 36%,100% 62%,100% 100%)}
+.hero__form-badge{display:inline-block;margin-bottom:8px;padding:3px 10px;border-radius:999px;background:rgba(245,183,0,.16);border:1px solid rgba(245,183,0,.4);font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#FFD34D}
+.hero__form-title{margin:0 0 2px;font-family:var(--display);font-size:22px;line-height:1.2;font-weight:700;letter-spacing:-.02em;color:#fff}
+.hero__form-subtitle{margin:0;font-size:13px;line-height:1.45;color:rgba(255,255,255,.74)}
+.hero__form-facts{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0;padding:0;list-style:none}
+.hero__form-facts li{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);font-size:11.5px;font-weight:600;line-height:1.5;color:rgba(255,255,255,.9)}
+.hero__form-facts li::before{content:"";width:6px;height:6px;border-radius:50%;background:#F5B700}
+@media (max-width:540px){.hero__form-head{padding:16px 16px 28px}.hero__form-title{font-size:20px}}
 
 /* ridge divider */
 .ridge{position:absolute;left:0;width:100%;height:56px;fill:#fff;pointer-events:none}

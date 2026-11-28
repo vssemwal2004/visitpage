@@ -39,6 +39,18 @@ stores nothing.
   It never touches field names, validation or the request, so leads are unaffected. If EduLeap
   renames its classes (`.el-card`, `.el-input`, …) the form falls back to the vendor styling.
 
+## Thank-you page (`thank-you.html`)
+Full page in the landing-page design (same header, hero, buttons, footer; styles in section 19
+of `style.css`). Set it as the widget's **redirect URL after successful submission** in the
+NoPaperForms admin, as an absolute URL on the **same origin** as the landing page
+(same `https`, same `www`/non-`www`), e.g. `https://<lp-domain>/<lp-path>/thank-you.html`.
+
+NoPaperForms opens that URL inside the form iframe. A small script in the page's `<head>`
+detects this, shows a compact "Enquiry received" card in the form, and moves the whole tab to
+the full thank-you page. If the browser blocks that (different origin), the card stays with a
+"Continue" button. Put conversion tags (Google Ads / Meta / GA4) in `thank-you.html`, inside
+`if (window.top === window.self)`, so they fire once.
+
 ## Other behaviour without JavaScript
 - Mobile menu: `#menu` URL target (`:target`); tapping a section link closes it.
 - Programme tabs: radio buttons + `:has()`; departments are `<details>` accordions.

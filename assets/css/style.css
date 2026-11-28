@@ -12,6 +12,7 @@
    06 Enquiry form (#apply) 13 FAQ
    07 Tapes, sections,      14 CTA, footer, dock
       About                 15 Motion · 16 Tablet · 17 Desktop · 18 Wide
+   19 Thank-you page (thank-you.html)
    ===================================================================== */
 
 /* ------------------------------------------------------------- 01 fonts & tokens */
@@ -601,4 +602,69 @@ ul,ol{margin:0;padding:0;list-style:none}
   .journey li:hover{transform:none;background:none;box-shadow:none}
   .journey__n{box-shadow:0 0 0 8px #fff;transition:transform .3s var(--ease),background .3s}
   .journey li:hover .journey__n{transform:translateY(-4px);background:var(--gold);color:var(--ink)}
+}
+
+/* =====================================================================
+   19 Thank-you page (thank-you.html) – reuses header, hero, buttons, footer above
+   ===================================================================== */
+.ty-hero{position:relative;isolation:isolate;overflow:hidden;background:var(--ink);color:#fff;text-align:center;padding:calc(var(--hdr) + 64px) 0 120px}
+.ty-hero .hero__media{height:100%;min-height:0}
+.ty-hero .hero__veil{background:radial-gradient(80% 70% at 50% 40%,rgba(10,27,63,.72),rgba(10,27,63,.92) 70%),linear-gradient(180deg,rgba(10,27,63,.5),var(--ink) 96%)}
+.ty{display:grid;justify-items:center;max-width:780px}
+.ty .pill{margin-top:28px}
+.ty__title{margin-top:16px;font-family:var(--display);font-weight:700;font-size:clamp(32px,8.4vw,62px);line-height:1.08;letter-spacing:-.025em;text-wrap:balance}
+.ty__title .hl{display:inline}
+.ty__lede{margin-top:16px;max-width:600px;color:rgba(255,255,255,.84);font-size:16px}
+.ty .hero__ctas{justify-content:center;width:100%;margin-top:26px}
+.ty__note{margin-top:22px;font-size:13.5px;color:rgba(255,255,255,.66)}
+.ty__note a{color:var(--gold-2);font-weight:600}
+
+/* animated tick seal */
+.ty__seal{width:92px;height:92px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(140deg,var(--gold-2),var(--gold));color:var(--ink);box-shadow:0 0 0 10px rgba(245,183,0,.16),0 0 0 22px rgba(245,183,0,.07),0 22px 44px -14px rgba(245,183,0,.65)}
+.ty__seal svg{width:44px;height:44px}
+.ty__seal path{fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:24;stroke-dashoffset:0}
+.ty__seal--sm{width:72px;height:72px;box-shadow:0 0 0 8px rgba(245,183,0,.16)}
+.ty__seal--sm svg{width:34px;height:34px}
+@media (prefers-reduced-motion:no-preference){
+  .ty__seal{animation:tyPop .6s cubic-bezier(.2,.9,.3,1.3) both}
+  .ty__seal path{stroke-dashoffset:24;animation:tyDraw .5s .4s ease-out forwards}
+  @keyframes tyPop{from{transform:scale(.5);opacity:0}}
+  @keyframes tyDraw{to{stroke-dashoffset:0}}
+}
+
+/* what happens next */
+.ty-next__head{display:grid;justify-items:center;text-align:center;margin-bottom:32px}
+.ty-steps{display:grid;gap:12px}
+.ty-step{display:grid;grid-template-columns:52px 1fr;align-content:start;gap:16px;padding:20px;border-radius:22px;background:var(--mist);border:1px solid var(--line)}
+.ty-step .journey__n{box-shadow:none}
+.ty-step h3{margin-top:4px;font-family:var(--display);font-size:18px;font-weight:650;line-height:1.25;letter-spacing:-.01em}
+.ty-step p{margin-top:4px;color:var(--muted);font-size:14.5px}
+.ty-explore{margin:56px 0 18px;text-align:center}
+.ty-links{display:grid;gap:12px}
+.ty-link{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;height:100%;padding:16px 18px;border-radius:20px;background:#fff;border:1px solid var(--line);text-decoration:none;box-shadow:0 20px 40px -32px rgba(10,27,63,.5);transition:transform .25s var(--ease),border-color .25s,box-shadow .25s}
+.ty-link:hover{transform:translateY(-3px);border-color:#C9D5F0;box-shadow:0 24px 40px -26px rgba(10,27,63,.5)}
+.ty-link__ico{width:46px;height:46px;border-radius:14px;background:var(--sky);color:var(--blue);display:grid;place-items:center;font-size:22px;transition:background .25s,color .25s}
+.ty-link:hover .ty-link__ico{background:var(--ink);color:var(--gold)}
+.ty-link b{display:block;font-family:var(--display);font-size:16.5px;font-weight:650;line-height:1.25}
+.ty-link small{display:block;margin-top:2px;font-size:13.5px;line-height:1.4;color:var(--muted)}
+.ty-link__go{font-size:18px;color:var(--blue);transition:transform .25s var(--ease)}
+.ty-link:hover .ty-link__go{transform:translateX(4px)}
+.ftr--plain{padding-bottom:40px}
+
+/* Inside the NoPaperForms iframe: only the compact card, while the script moves the tab to the full page */
+.ty-mini{display:none}
+.ty-framed body>*{display:none!important}
+.ty-framed body>.ty-mini{display:grid!important;min-height:100vh;place-content:center;justify-items:center;gap:12px;padding:24px;text-align:center}
+.ty-mini__t{margin-top:8px;font-family:var(--display);font-size:22px;font-weight:700;letter-spacing:-.02em;color:var(--ink)}
+.ty-mini__p{font-size:14.5px;color:var(--muted)}
+
+@media (min-width:560px){
+  .ty-links{grid-template-columns:1fr 1fr}
+}
+@media (min-width:861px){
+  .ty-hero{padding:calc(var(--hdr) + 110px) 0 170px}
+  .ty__lede{font-size:17.5px}
+  .ty-steps{grid-template-columns:repeat(3,1fr);gap:16px}
+  .ty-step{grid-template-columns:1fr;gap:16px;padding:26px}
+  .ty-explore{margin-top:80px}
 }
